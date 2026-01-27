@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# Create a new resume version from general.tex template
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+VERSIONS_DIR="$PROJECT_DIR/versions"
+TEMPLATE="$VERSIONS_DIR/general.tex"
+
+# Colors for output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+usage() {
+    echo "Usage: $0 <company-name> [--build]"
+    echo ""
+    echo "Creates a new resume version from general.tex template"
+    echo ""
+    echo "Arguments:"
+    echo "  company-name    Name for the new version (e.g., company-a, company-b, startup)"
+    echo "  --build         Also build the PDF after creating"
+    echo ""
+    echo "Examples:"
+    echo "  $0 company-a"
+    echo "  $0 company-b --build"
+    echo ""
+    echo "Available versions:"
+    ls -1 "$VERSIONS_DIR"/*.tex 2>/dev/null | xargs -n1 basename | sed 's/\.tex$//'
+    exit 1
+}
+
+# Check arguments
+if [ -z "$1" ] || [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    usage
+fi
+
+COMPANY="$1"
+BUILD=false
+
+if [ "$2" == "--build" ]; then
+    BUILD=true
+fi
+
+# Sanitize company name (lowercase, replace spaces with dashes)
+COMPANY=$(echo "$COMPANY" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+TARGET="$VERSIONS_DIR/$COMPANY.tex"
+
+# Check if already exists
+if [ -f "$TARGET" ]; then
+    echo -e "${YELLOW}Warning: $TARGET already exists${NC}"
+    read -p "Overwrite? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        exit 1
+    fi
+fi
+
+# Copy template
+cp "$TEMPLATE" "$TARGET"
+echo -e "${GREEN}Created:${NC} versions/$COMPANY.tex"
+
+# Build if requested
+if [ "$BUILD" = true ]; then
+    echo "Building PDF..."
+    cd "$PROJECT_DIR"
+    make "$COMPANY"
+    echo -e "${GREEN}Built:${NC} out/$COMPANY.pdf"
+fi
+
+echo ""
+echo "Next steps:"
+echo "  1. Edit versions/$COMPANY.tex to customize for this role"
+echo "  2. Run 'make $COMPANY' to build the PDF"
+echo "  3. Run 'make watch-$COMPANY' for live preview"

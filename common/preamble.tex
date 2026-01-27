@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{primary}{RGB}{30, 60, 90}        % Dark blue for headings
+\definecolor{accent}{RGB}{70, 100, 130}       % Lighter blue for accents
+\definecolor{darkgray}{RGB}{60, 60, 60}       % Dark gray for body text
+
+% Fonts (requires XeLaTeX or LuaLaTeX)
+\setmainfont{Helvetica Neue}[
+  UprightFont = * Light,
+  BoldFont = * Bold,
+  ItalicFont = * Light Italic,
+  BoldItalicFont = * Bold Italic
+]
+
+% Formatting
+\pagestyle{empty}
+\setlist[itemize]{nosep, leftmargin=1.5em, label=\textcolor{primary}{\textbullet}}
+\color{darkgray}
+
+% Section styling
+\titleformat{\section}
+  {\Large\bfseries\color{primary}}
+  {}{0em}{}
+  [\vspace{-0.5em}\textcolor{primary}{\rule{\linewidth}{0.5pt}}]
+\titlespacing{\section}{0pt}{1em}{0.5em}
+
+% Custom commands
+\newcommand{\entry}[4]{
+  \textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4}
+}

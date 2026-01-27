@@ -1,0 +1,25 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# Generated output directory
+out/
+
+# Reference materials (job descriptions, old resumes, templates)
+ref/
+
+# IDE
+.idea/
+*.swp
+*~
+
+# macOS
+.DS_Store
