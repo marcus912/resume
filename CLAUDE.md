@@ -37,9 +37,11 @@ Defined in `common/preamble.tex`:
 
 ```latex
 \entry{Title}{Location}{Organization}{Dates}
+\entrygap  % Vertical spacing between entries (configurable via \entryspacing)
 ```
 
-Formats job/education entries with title and org on left, location and dates on right.
+- `\entry` - Formats job/education entries with title and org on left, location and dates on right
+- `\entrygap` - Adds consistent vertical spacing between entries (adjust `\entryspacing` in preamble.tex)
 
 ## Writing Job Content
 

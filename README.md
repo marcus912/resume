@@ -24,9 +24,11 @@ make watch-general
 resume/
 ├── content/                  # Master database of all your content
 │   ├── jobs/                 # Work experience entries
+│   │   ├── fortinet.tex
 │   │   ├── linksys.tex
 │   │   └── globeunion.tex
 │   ├── projects/             # Side projects
+│   │   ├── voicechat.tex
 │   │   └── objectdetect.tex
 │   ├── skills/               # Skills by category
 │   │   ├── languages.tex     # JavaScript, TypeScript, Java, Python
@@ -45,8 +47,7 @@ resume/
 │   ├── header.tex            # Name and contact info
 │   └── summary.tex           # Professional summary
 ├── versions/                 # Resume versions (pick & choose content)
-│   ├── general.tex           # General-purpose resume
-│   └── startup.tex           # Startup-focused version
+│   └── general.tex           # General-purpose resume
 ├── bin/                      # Helper scripts
 │   └── new-version           # Create new resume version
 ├── out/                      # Generated PDFs
@@ -136,7 +137,7 @@ Description of the project and technologies used.
 Create `content/skills/newcategory.tex`:
 
 ```latex
-Skill1 & Skill2 & Skill3 & Skill4
+\textbf{Category:} & Skill1, Skill2, Skill3
 ```
 
 Then include it in your version file:
