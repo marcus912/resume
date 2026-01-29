@@ -27,7 +27,7 @@ versions/general.tex          # Main file - selects what to include
 
 **Key directories:**
 - `common/` - Shared LaTeX (preamble.tex defines fonts/colors, header.tex has contact info)
-- `content/` - Content database (jobs/, skills/, education/, projects/)
+- `content/` - Content database (jobs/, skills/, education/, certifications/, projects/)
 - `versions/` - Resume variants that mix-and-match content
 - `ref/` - Reference materials (job descriptions in ref/jd/)
 

@@ -40,6 +40,8 @@ resume/
 │   ├── education/            # Degrees
 │   │   ├── nchu-ms.tex
 │   │   └── ksu-bs.tex
+│   ├── certifications/       # Professional certifications
+│   │   └── aws.tex
 │   └── publications/         # Papers, conferences
 │       └── rice-blast.tex
 ├── common/                   # Shared formatting & header
