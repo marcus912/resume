@@ -45,10 +45,13 @@ Defined in `common/preamble.tex`:
 
 ## Writing Job Content
 
-Bullet point formula:
-1. **Action verb** - Led, Architected, Implemented, Spearheaded, etc.
-2. **Specific/Quantifiable details** - technologies, scale, numbers
-3. **Results** - impact, outcome, business value
+Use the XYZ formula: **Accomplished [X] as measured by [Y], by doing [Z]**
+
+- **X** = What you accomplished (the result/impact)
+- **Y** = How it was measured (metrics, scale, quantifiable outcome)
+- **Z** = How you did it (actions, technologies, methods)
+
+Start with a strong action verb: Led, Architected, Implemented, Spearheaded, Deployed, Developed, etc.
 
 Example: "Led the Apple token project, delivering MFi tokens for over 4 million devices, enabling seamless HomeKit integration via cloud APIs."
 
