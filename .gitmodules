@@ -1,0 +1,6 @@
+[submodule "technical/gcp-engineering-handbook"]
+	path = technical/gcp-engineering-handbook
+	url = https://github.com/marcus912/gcp-engineering-handbook
+[submodule "technical/machine-learning-ops-handbook"]
+	path = technical/machine-learning-ops-handbook
+	url = https://github.com/marcus912/machine-learning-ops-handbook
