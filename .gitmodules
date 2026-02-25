@@ -4,3 +4,7 @@
 [submodule "technical/machine-learning-ops-handbook"]
 	path = technical/machine-learning-ops-handbook
 	url = https://github.com/marcus912/machine-learning-ops-handbook
+[submodule "interview"]
+	path = interview
+	url = https://github.com/marcus912/interview.git
+	branch = master
