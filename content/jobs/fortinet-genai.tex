@@ -1,8 +1,9 @@
 \textbf{Cloud Engineer} | Fortinet, Inc | 06/2025 -- Present
 \begin{itemize}
-  \item Architected and shipped a production multi-agent system on AWS Bedrock AgentCore (Strands SDK, Claude Sonnet 4.5) using hierarchical delegation (router agent $\rightarrow$ workflow agent $\rightarrow$ sub-agents) with MCP tool-calling, reducing customer-feedback triage from 2-3 days to under 1 day for Customer Support, QA, and OEM partner teams.
-  \item Built a RAG knowledge pipeline over enterprise documentation using Amazon Titan Embed v2 and OpenSearch Serverless, with chunked S3 source ingestion via Bedrock Knowledge Base, replacing manual Atlassian Wiki searches with AI-generated summaries.
-  \item Built a Python MCP-server monorepo deployed on AWS ECS Fargate via Terraform, fronted by a LiteLLM proxy that handles virtual-key authentication, per-team quotas, and audit logging, enabling engineering teams to share internal MCP tools (firmware ops, team docs) across Claude Desktop and other MCP clients with attributable, rate-limited access.
-  \item Self-hosted a Honcho agent-memory server on ECS Fargate and adopted the honcho-claude plugin so engineers' Claude sessions automatically sync team context and task conclusions into a shared workspace, giving the team continuous memory of past work and decisions.
-  \item Instrumented the agentic stack with CloudWatch tracing for per-invocation latency, input/output tokens, and time-to-first-token; deployed end-to-end via Terraform across dev, QA, and prod environments with short-term and long-term agent memory in production.
+  \item Architected and shipped a production multi-agent system on AWS Bedrock AgentCore (Strands SDK) that routes work to specialized sub-agents through MCP tools, cutting customer-feedback triage from 2-3 days to under 1 day for Customer Support, QA, and OEM partner teams.
+  \item Built a RAG knowledge pipeline over internal documentation using Amazon Titan embeddings and OpenSearch Serverless, replacing manual Atlassian Wiki searches with AI-generated answers.
+  \item Built a shared MCP server platform on AWS ECS Fargate, deployed with Terraform and fronted by a LiteLLM proxy for per-team keys, quotas, and audit logging, giving engineering teams safe access to internal tools (firmware operations, Jenkins, Github) from Claude and other MCP clients.
+  \item Published an internal Claude Code plugin marketplace of reusable skills and tools, covering firmware build-and-test on Jenkins, shared MCP servers, and persistent session memory, standardizing how engineers use AI across the develop-and-test workflow.
+  \item Self-hosted a Honcho memory server so engineers' Claude sessions automatically share team context and past decisions, giving the team continuous memory across work.
+  \item Instrumented the stack with CloudWatch tracing for latency, token usage, and time-to-first-token, deploying end-to-end via Terraform across dev, QA, and prod.
 \end{itemize}
